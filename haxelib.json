@@ -1,0 +1,11 @@
+{
+  "name": "box2dhx",
+  "url": "http://github.com/jujulian1987/box2dhx/",
+  "license": "GNU GPL v3",
+  "tags": [ "physics", "flash", "cpp" ],
+  "description": "Box2D is a tremendously popular physics engine for most platforms.",
+  "version": "1.0.0",
+  "releasenote": "Box2Dhx now compatible with Haxe 3",
+  "contributors": [ "jujulian1987" ],
+  "dependencies": {}
+}
