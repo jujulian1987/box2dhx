@@ -1,7 +1,7 @@
 {
   "name": "box2dhx",
   "url": "http://github.com/jujulian1987/box2dhx/",
-  "license": "GNU GPL v3",
+  "license": "GPL",
   "tags": [ "physics", "flash", "cpp" ],
   "description": "Box2D is a tremendously popular physics engine for most platforms.",
   "version": "1.0.0",
