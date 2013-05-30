@@ -22,7 +22,6 @@ import box2D.collision.B2Manifold;
 import box2D.dynamics.B2ContactListener;
 import box2D.common.math.B2Math;
 import box2D.dynamics.B2Body;
-import haxe.Int32;
 //typedef b2Contact* b2ContactCreateFcn(B2Shape* shape1, B2Shape* shape2, b2BlockAllocator* allocator);
 //typedef void b2ContactDestroyFcn(b2Contact* contact, b2BlockAllocator* allocator);
 class B2Contact

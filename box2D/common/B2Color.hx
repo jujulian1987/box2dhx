@@ -29,10 +29,43 @@ import box2D.common.math.B2XForm;
 class B2Color
  {
 	
-	public var b(null, setB) : Float;
-	public var color(getColor, null) :Int;
-	public var g(null, setG) : Float;
-	public var r(null, setR) : Float;
+	private var _b : Float;
+	private var _color :Int;
+	private var _g : Float;
+	private var _r : Float;
+	
+	private function set_b(bb:Float):Float 
+	{
+		_b = Std.int(255 * B2Math.b2Clamp(bb, 0.0, 1.0));
+		return _b = bb;
+	}
+	
+	public var b(null, set_b):Float;
+	
+	private function set_g(gg:Float):Float 
+	{
+		_g = Std.int(255 * B2Math.b2Clamp(gg, 0.0, 1.0));
+		return _g = gg;
+	}
+	
+	public var g(null, set_g):Float;
+	
+	private function set_r(rr:Float):Float 
+	{
+		
+		_r = Std.int(255 * B2Math.b2Clamp(rr, 0.0, 1.0));
+		return _r = rr;
+	}
+	
+	public var r(null, set_r):Float;
+	
+	function get_color():Int 
+	{
+		return (cast(_r, Int)) | (cast(_g, Int) << 8) | (cast(_b, Int) << 16);
+	}
+	
+	public var color(get_color, null):Int;
+	
 	public function new(rr:Float, gg:Float, bb:Float){
 		_r = Std.int(255 * B2Math.b2Clamp(rr, 0.0, 1.0));
 		_g = Std.int(255 * B2Math.b2Clamp(gg, 0.0, 1.0));
@@ -44,29 +77,4 @@ class B2Color
 		_g = Std.int(255 * B2Math.b2Clamp(gg, 0.0, 1.0));
 		_b = Std.int(255 * B2Math.b2Clamp(bb, 0.0, 1.0));
 	}
-	
-	// R
-	public function setR(rr:Float):Float{
-		_r = Std.int(255 * B2Math.b2Clamp(rr, 0.0, 1.0));
-		return rr;
-	}
-	// G
-	public function setG(gg:Float):Float{
-		_g = Std.int(255 * B2Math.b2Clamp(gg, 0.0, 1.0));
-		return gg;
-	}
-	// B
-	public function setB(bb:Float):Float{
-		_b = Std.int(255 * B2Math.b2Clamp(bb, 0.0, 1.0));
-		return bb;
-	}
-	
-	// Color
-	public function getColor():Int{
-		return (_r) | (_g << 8) | (_b << 16);
-	}
-	
-	var _r:Int ;
-	var _g:Int ;
-	var _b:Int ;
 }

@@ -22,8 +22,6 @@ package box2D.collision;
 
 import box2D.common.B2Settings;
 import box2D.common.math.B2Math;
-import haxe.Int32;
-using haxe.Int32;
 class B2PairManager
  {
 //public:

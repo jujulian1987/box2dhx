@@ -29,12 +29,12 @@ class B2Settings {
 	public function new() { }
 	
 	public static inline var USHRT_MAX_CONST_CONST:Int = 0x0000ffff;
-	public static inline var b2_pi:Float = Math.PI;
+	public static var b2_pi:Float = Math.PI;
 	// Collision
 	public static inline var b2_maxManifoldPoints = 2;
 	public static inline var b2_maxPolygonVertices = 8;
 	public static inline var b2_maxProxies = 512;				// this must be a power of two
-	public static var b2_maxPairs:Int = 8 * b2_maxProxies;	// this must be a power of two
+	public static inline var b2_maxPairs:Int = 8 * b2_maxProxies;	// this must be a power of two
 	// Dynamics
 	
 	/// A small length used as a collision and constraint tolerance. Usually it is

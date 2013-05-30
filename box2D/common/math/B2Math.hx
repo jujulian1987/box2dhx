@@ -18,7 +18,7 @@
 package box2D.common.math;
 import box2D.common.B2Settings;
 import box2D.collision.B2AABB;
-import haxe.Int32;
+
 class B2Math {
 	#if (neko || cpp)
 	public static inline var MIN_VALUE = 2.2250738585072014e-308;

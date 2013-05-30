@@ -22,52 +22,67 @@ class Features
 	///< The edge that defines the outward contact normal.
 	public function new() { }
 	
-	public var flip(getFlip, setFlip) : Int;
-	public var incidentEdge(getIncidentEdge, setIncidentEdge) : Int;
-	public var incidentVertex(getIncidentVertex, setIncidentVertex) : Int;
-	public var referenceEdge(getReferenceEdge, setReferenceEdge) : Int;
+	function get_referenceEdge():Int 
+	{
+		return _referenceEdge;
+	}
+	
 	///< The edge that defines the outward contact normal.
-	public function setReferenceEdge(value:Int):Int{
+	function set_referenceEdge(value:Int):Int 
+	{
 		_referenceEdge = value;
 		_m_id._key = (_m_id._key & 0xffffff00) | (_referenceEdge & 0x000000ff);
 		return value;
 	}
-	public function getReferenceEdge():Int{
-		return _referenceEdge;
+	
+	public var referenceEdge(get_referenceEdge, set_referenceEdge):Int;
+	public var _referenceEdge : Int;
+	
+	function get_incidentEdge():Int 
+	{
+		return _incidentEdge;
 	}
-	public var _referenceEdge:Int;
 	
 	///< The edge most anti-parallel to the reference edge.
-	public function setIncidentEdge(value:Int):Int{
+	function set_incidentEdge(value:Int):Int 
+	{
 		_incidentEdge = value;
 		_m_id._key = (_m_id._key & 0xffff00ff) | ((_incidentEdge << 8) & 0x0000ff00);
 		return value;
 	}
-	public function getIncidentEdge():Int{
-		return _incidentEdge;
-	}
+	
+	public var incidentEdge(get_incidentEdge, set_incidentEdge):Int;
 	public var _incidentEdge:Int;
 	
+	function get_incidentVertex():Int 
+	{
+		return _incidentVertex;
+	}
+	
 	///< The vertex (0 or 1) on the incident edge that was clipped.
-	public function setIncidentVertex(value:Int):Int{
+	function set_incidentVertex(value:Int):Int 
+	{
 		_incidentVertex = value;
 		_m_id._key = (_m_id._key & 0xff00ffff) | ((_incidentVertex << 16) & 0x00ff0000);
 		return value;
 	}
-	public function getIncidentVertex():Int{
-		return _incidentVertex;
-	}
+	
+	public var incidentVertex(get_incidentVertex, set_incidentVertex):Int;
 	public var _incidentVertex:Int;
 	
-	///< A value of 1 indicates that the reference edge is on shape2.
-	public function setFlip(value:Int):Int{
+	function get_flip():Int 
+	{
+		return _flip;
+	}
+	
+	function set_flip(value:Int):Int 
+	{
 		_flip = value;
 		_m_id._key = (_m_id._key & 0x00ffffff) | ((_flip << 24) & 0xff000000);
 		return value;
 	}
-	public function getFlip():Int{
-		return _flip;
-	}
+	
+	public var flip(get_flip, set_flip):Int;
 	public var _flip:Int;
 	
 	

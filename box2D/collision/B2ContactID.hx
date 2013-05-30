@@ -18,15 +18,13 @@
 package box2D.collision;
 	
 import box2D.collision.Features;
-import haxe.Int32;
-typedef I32 = haxe.Int32;
 
-using haxe.Int32;
+typedef I32 = Int;
 // We use contact ids to facilitate warm starting.
 class B2ContactID
  {
 	
-	public var key(getKey, setKey) :Int;
+	public var _key :Int;
 	public function new(){
 		_key = 0;
 		features = new Features();
@@ -41,10 +39,16 @@ class B2ContactID
 		id.key = key;
 		return id;
 	}
-	public function getKey():Int{
+	
+	public var features:Features ;
+	
+	function get_key():Int 
+	{
 		return _key;
 	}
-	public function setKey(value:Int):Int{
+	
+	function set_key(value:Int):Int 
+	{
 		_key = value;
 		/*
 		#if neko
@@ -63,6 +67,6 @@ class B2ContactID
 		//#end
 		return value;
 	}
-	public var features:Features ;
-	public var _key:Int;///< Used to quickly compare contact ids.
+	
+	public var key(get_key, set_key):Int;
 }
