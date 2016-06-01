@@ -33,11 +33,11 @@ class B2Math {
 	
 	
 	public static inline function complement (i : Int) : Int {
-		#if neko
-		return Int32.toInt(Int32.complement(Int32.ofInt(i)));
-		#else 
+		//#if neko
+		//return Int32.toInt(Int32.complement(Int32.ofInt(i)));
+		//#else 
 		return ~i;
-		#end
+		//#end
 	}
 	
 	/// This function is used to ensure that a floating point number is
